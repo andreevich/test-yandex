@@ -5,11 +5,13 @@ function sum(...arg){
 	
 
 
-function tempSum_(el){
+function tempSum_(...arg2){
 	
-	tempSum+=el;
+	tempSum += arg2.reduce((sum, el)=>{
+		return sum+=el;
+	},0)
 
-	return tempSum;
+	return tempSum_;
 }
 
 tempSum_.valueOf = function (){
